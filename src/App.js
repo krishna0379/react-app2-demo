@@ -1,28 +1,20 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { useState } from "react";
 
 export default function App() {
+  const [list] = useState([1, 2, 3, 4, 5, 6,7,8,9]);
   return (
-    <div style={{ background: "lightblue" }}>
-      <h1 style={{ background: "yellow" }}>Welcome to New Project</h1>
-      <div>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita
-        aperiam, quod aspernatur officia voluptates perspiciatis eum, ab
-        earum,fugiat tempora aspernatur neque itaque commodi quidem quae ab.
-        Fugit maiores enim, iure illo molestiae, cumque corporis quos
-        perferendis quae consequatur dolore autem sequi totam? Nemo quas, soluta
-        hic necessitatibus dolorum ipsam voluptatum, repellendus iusto
-        blanditiis incidunt fugiat ullam error. Veritatis praesentium similique
-        quaerat aut ab, unde ratione itaque quo accusamus architecto inventore
-        at voluptatem reprehenderit. Eum, consequatur?
-      </div>
-      <h2 style={{ background: "yellow" }}>About The Project</h2>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ipsum
-        velit illum est ariatur aut ipsam quia! Deserunt corporis ea amet
-        maiores delectus corrupti repudiandae voluptates placeat ratione
-        consequatur. Deserunt expedita nobis blanditiis est ut ex?
-      </div>
+    <div className="bg-secondary ">
+      <h1 className="bg-info p-3 rounded  sticky-top ">React with Bootstrap</h1>
+      {list.map((item, index) => (
+        <div key={index} className=" alert-info p-3 m-3 rounded">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium,
+          consequatur! Libero corporis sit reiciendis minus, modi molestiae
+          laborum iste sed illum eveniet error voluptas rem eligendi quasi
+          inventore non aut. Libero accusantium quas sint illo.
+        </div>
+      ))}
     </div>
   );
 }
