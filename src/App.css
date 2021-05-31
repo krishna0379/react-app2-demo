@@ -1,3 +1,20 @@
+.beautify{
+  background-color: rgb(72, 72, 192);
+  height:100px;
+  color:cornsilk;
+  border-radius: 8px;
+
+  margin: 8px;
+  margin-bottom: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
 .App {
   text-align: center;
 }
