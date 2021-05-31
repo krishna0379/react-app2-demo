@@ -1,27 +1,37 @@
+/* eslint-disable no-unreachable */
 import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
 
 export default function App() {
-  const [list] = useState([1, 1, 1, 1, 1]);
-  return (
-    <div className="alert-info">
-      <h1 className="bg-danger  text-info p-3 rounded sticky-top"> Mini Instagram</h1>
+  const [textInput, setTextInput] = useState("");
+  const updateTextInput = (e) => setTextInput(e.target.value);
 
-      {list.map((item, index) => (
-        <div
-          key={index}
-          className=" m-3 rounded"
-          style={{ height: "300px" }}
-        >
-          <img
-            src= {"https://picsum.photos/300" + index}
-            className="rounded"
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            alt=""
-          />
-        </div>
-      ))}
+  const [list, setList] = useState([]);
+  const postTweet = () => {
+    setList([textInput, ...list]);
+    setTextInput("");
+  };
+  return(
+  <div className="bg-dark ">
+    <h1 className="bg-info p-3">Mini Twitter</h1>
+    <div className="m-3 mb-4">
+      <input
+        type="text"
+        value={textInput}
+        onChange={(e) => updateTextInput(e)}
+        className="from-control mb-2"
+        placeholder="post Tweet"
+      />
+      <input 
+      type="button"
+       className="btn-info"
+       onClick={()=> postTweet()}
+       value="Tweet" />
     </div>
+    {list.map((item, index) =>(
+    <div key={index} className="alert-secondary">{item}</div>
+    ))}
+  </div>
   );
 }
